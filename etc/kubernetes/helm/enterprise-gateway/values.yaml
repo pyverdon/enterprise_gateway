@@ -110,6 +110,10 @@ kernelspecsPvc:
 
 ingress:
   enabled: false
+  # Note: The .spec.ingressClassName behavior has precedence over the deprecated kubernetes.io/ingress.class annotation.
+  # https://kubernetes.github.io/ingress-nginx/
+  # use it when setting service type to "Loadbalancer"
+  # ingressClassName: "nginx"
   hostName: "" # Ingress resource host
   pathType: "Prefix"
   path: "/"
